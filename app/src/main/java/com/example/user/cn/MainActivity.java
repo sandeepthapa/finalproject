@@ -3,6 +3,8 @@ package com.example.user.cn;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -85,6 +87,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
+
+            FragmentTransaction ftC = getSupportFragmentManager().beginTransaction();
+            ftC.replace(R.id.frame, Contact.newInstance("1st phone","2nd phone"));
+            ftC.commit();
 
         } else if (id == R.id.nav_manage) {
 

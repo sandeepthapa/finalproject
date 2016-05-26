@@ -22,25 +22,25 @@
 
     <item android:title="Services">
         <menu>
-        <item
-            android:id="@+id/nav_share"
+            <item
+                android:id="@+id/nav_share"
 
-            android:title="Flight ticketing" />
-        <item
-            android:id="@+id/nav_send"
+                android:title="Flight ticketing" />
+            <item
+                android:id="@+id/nav_send"
 
-            android:title="Vehicle Ticketing" />
-        <item
-            android:id="@+id/trek"
+                android:title="Vehicle Ticketing" />
+            <item
+                android:id="@+id/trek"
 
-            android:title="Trekking" />
-        <item
-            android:id="@+id/Tour"
+                android:title="Trekking" />
+            <item
+                android:id="@+id/Tour"
 
-            android:title="Tour" />
-        <item
-            android:id="@+id/Hike"
-                        android:title="Hiking" />
+                android:title="Tour" />
+            <item
+                android:id="@+id/Hike"
+                android:title="Hiking" />
         </menu>
-      </item>
+    </item>
 </menu>
