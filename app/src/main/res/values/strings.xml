@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CN</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appointment_date">Appointment Date</string>
+    <string name="calendar">calendar</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="your_message">Your Message</string>
+    <string name="contact">Contact</string>
+    <string name="names">Name</string>
+    <string name="som_thapa">Som Thapa</string>
+    <string name="_28_213144">28.213144</string>
+    <string name="about_us">About us</string>
+</resources>

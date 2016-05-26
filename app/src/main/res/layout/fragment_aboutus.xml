@@ -1,0 +1,227 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.cn.Aboutus">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top"
+        android:background="@drawable/theme">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/about_us"
+            android:id="@+id/textView4"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/infos"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Community Nepal Travels and Tours (P) Ltd, is a new generation travel organization managed and staffed by a young dynamic group who believe in nothing but the best for the visitors to well earned holidays, our passion is to ensure quality  travel arrangements with freiendly staffs and expereinced guides."
+            android:textColor="#ffffff"
+            android:textAlignment="gravity"
+            android:layout_margin="5dp" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="2sp"
+            android:layout_height="2sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:id="@+id/view"></android.support.v7.widget.ButtonBarLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#ffffff"
+            android:height="95dp"
+            android:layout_margin="0dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/transparent" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageView6"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/cont"
+            android:backgroundTint="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Founder"
+            android:id="@+id/textView9"
+            android:layout_below="@+id/imageView6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Som Thapa"
+            android:id="@+id/pinfo"
+            android:layout_below="@+id/view"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_marginTop="30dp"
+            android:textColor="#ffffff" />
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="2sp"
+            android:layout_height="2sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:id="@+id/view2"></android.support.v7.widget.ButtonBarLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button8"
+            android:background="#ffffff"
+            android:height="95dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_below="@+id/view2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/view2"
+            android:layout_alignEnd="@+id/view2" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="2sp"
+            android:layout_height="2sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:layout_marginTop="355dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:id="@+id/view4"></android.support.v7.widget.ButtonBarLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button9"
+            android:background="#ffffff"
+            android:height="95dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_below="@+id/view4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageView7"
+            android:layout_alignTop="@+id/button8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:background="@android:drawable/ic_lock_idle_alarm"
+            android:backgroundTint="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Founded"
+            android:id="@+id/textView20"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/imageView7"
+            android:layout_alignLeft="@+id/imageView7"
+            android:layout_alignStart="@+id/imageView7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2010"
+            android:id="@+id/textView21"
+            android:layout_below="@+id/view2"
+            android:layout_alignLeft="@+id/pinfo"
+            android:layout_alignStart="@+id/pinfo"
+            android:textColor="#ffffff"
+            android:layout_marginTop="30dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageView8"
+            android:layout_below="@+id/view4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:background="@android:drawable/btn_star_big_on"
+            android:backgroundTint="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mission"
+            android:id="@+id/textView22"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/imageView8"
+            android:layout_alignRight="@+id/imageView8"
+            android:layout_alignEnd="@+id/imageView8" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="To organize your holidays, ticketing, tours, white water rafting, treks and mountaineering expeditions to this Himalayan Kingdom of Nepal."
+            android:id="@+id/textView23"
+            android:textColor="#ffffff"
+            android:layout_toEndOf="@+id/imageView8"
+            android:layout_alignLeft="@+id/textView21"
+            android:layout_alignStart="@+id/textView21"
+            android:textSize="17dp"
+            android:layout_below="@+id/view4" />
+
+    </RelativeLayout>
+
+</FrameLayout>
