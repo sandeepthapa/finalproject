@@ -2,21 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.cn.Loginvia">
+    tools:context="com.example.user.cn.Loginvia"
+    android:background="#2345a1">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="right|top"
-        android:background="@drawable/theme">>
+        >
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Facebook"
-            android:id="@+id/button"
-            android:layout_above="@+id/button2"
+            android:id="@+id/btnfb"
+            android:layout_above="@+id/btngmail"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="68dp"
@@ -28,10 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gmail"
-            android:id="@+id/button2"
+            android:id="@+id/btngmail"
             android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/button"
-            android:layout_alignStart="@+id/button"
+            android:layout_alignLeft="@+id/btnfb"
+            android:layout_alignStart="@+id/btnfb"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:backgroundTint="@android:color/transparent"/>
@@ -40,10 +42,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Twitter"
-            android:id="@+id/button8"
-            android:layout_below="@+id/button2"
-            android:layout_alignLeft="@+id/button2"
-            android:layout_alignStart="@+id/button2"
+            android:id="@+id/btntwitter"
+            android:layout_below="@+id/btngmail"
+            android:layout_alignLeft="@+id/btngmail"
+            android:layout_alignStart="@+id/btngmail"
             android:layout_marginTop="76dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"

@@ -19,4 +19,9 @@
     <string name="som_thapa">Som Thapa</string>
     <string name="_28_213144">28.213144</string>
     <string name="about_us">About us</string>
+    <string-array name="City">
+        <item>Kathmandu</item>
+        <item>Pokhara</item>
+        <item>Baglung</item>
+    </string-array>
 </resources>

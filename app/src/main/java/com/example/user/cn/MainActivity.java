@@ -81,20 +81,43 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment;
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            fragment = new Loginvia();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
+
 
         } else if (id == R.id.nav_slideshow) {
+            fragment = new Contact();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
 
-            FragmentTransaction ftC = getSupportFragmentManager().beginTransaction();
-            ftC.replace(R.id.frame, Contact.newInstance("1st phone","2nd phone"));
-            ftC.commit();
+
+
+
+
 
         } else if (id == R.id.nav_manage) {
+            fragment = new Aboutus();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
+
+
+
 
         } else if (id == R.id.nav_share) {
+            fragment = new BlankFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
+
 
         } else if (id == R.id.nav_send) {
 
