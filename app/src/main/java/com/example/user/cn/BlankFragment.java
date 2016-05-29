@@ -21,8 +21,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 
-
-public class BlankFragment extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener{
+public class BlankFragment extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener {
     private String mParam1;
     private String mParam2;
     private TextView txtdate;
@@ -33,12 +32,6 @@ public class BlankFragment extends Fragment implements ImageButton.OnClickListen
     private ImageButton dates;
     private SimpleDateFormat dateFormatter;
 
-    public BlankFragment() {
-        // Required empty public constructor
-    }
-    public interface fragment1{
-
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,34 +51,40 @@ public class BlankFragment extends Fragment implements ImageButton.OnClickListen
         view = inflater.inflate(R.layout.fragment_blank, container, false);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
         dates.setOnClickListener(this);
-        txtdate=(TextView) view.findViewById(R.id.txtappdate);
+
+        txtdate = (TextView) view.findViewById(R.id.txtappdate);
         txtdate.setInputType(InputType.TYPE_NULL);
-//        String [] City =
-//                {"Kathmandu","Pokhara","Baglung",};
+        String[] City =
+                {"Kathmandu", "Pokhara", "Baglung"};
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, City);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_item);
         spinner.setAdapter(adapter);
         return view;
     }
+
     public void onClick(View view) {
         mDatePickerDialog.show();
     }
+
     private void setDateTimeField() {
-        dates.setOnClickListener(this);
+//        dates.setOnClickListener(this);
+        mDatePickerDialog = new DatePickerDialog(getActivity(), mDateSetListener, 2016, 05, 16);
         Calendar newCalendar = Calendar.getInstance();
-        DatePickerDialog.OnDateSetListener mDateSetListener
-                = new DatePickerDialog.OnDateSetListener() {
-            public void onDateSet(DatePicker view, int selectedYear,
-                                  int selectedMonth, int selectedDay) {
-                yy=selectedYear;
-                mm=selectedMonth;
-                dd=selectedDay;
-                //age.setDateOfBirth(startYear, startMonth, startDay);
-                txtdate.setText(""+dd+"-"+(mm+1)+"-"+yy);
-                //calculateAge();
-            }
-        };}
+    }
+
+    DatePickerDialog.OnDateSetListener mDateSetListener
+            = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            yy = selectedYear;
+            mm = selectedMonth;
+            dd = selectedDay;
+            //age.setDateOfBirth(startYear, startMonth, startDay);
+            txtdate.setText("" + dd + "-" + (mm + 1) + "-" + yy);
+            //calculateAge();
+        }
+    };
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
