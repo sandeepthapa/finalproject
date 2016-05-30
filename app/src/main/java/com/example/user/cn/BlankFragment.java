@@ -48,7 +48,7 @@ public class BlankFragment extends Fragment implements ImageButton.OnClickListen
 
 //        return inflater.inflate(R.layout.fragment_blank, container, false);
         View view = null;
-        view = inflater.inflate(R.layout.fragment_blank, container, false);
+        view = inflater.inflate(R.layout.fragment_spinner1, container, false);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
         dates.setOnClickListener(this);
 

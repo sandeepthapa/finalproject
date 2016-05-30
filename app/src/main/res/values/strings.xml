@@ -24,4 +24,20 @@
         <item>Pokhara</item>
         <item>Baglung</item>
     </string-array>
+    <string-array name="Trek">
+        <item>Mardi Himal</item>
+        <item>Lwang Ghalel</item>
+        <item>Ghadruk</item>
+        <item>Dhampus</item>
+        <item>ABc</item>
+        <item>Other Places</item>
+
+    </string-array>
+    <string-array name="Vehicle">
+        <item>Car</item>
+        <item>Bus</item>
+        <item>Jeep</item>
+        <item>other</item>
+
+    </string-array>
 </resources>

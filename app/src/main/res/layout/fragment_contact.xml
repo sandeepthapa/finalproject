@@ -104,7 +104,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button4"
+            android:id="@+id/btncall"
             android:background="#ffffff"
             android:height="95dp"
             android:textColor="#ffffff"
@@ -132,7 +132,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button5"
+            android:id="@+id/btnemail"
             android:background="#ffffff"
             android:height="95dp"
             android:textColor="#ffffff"
@@ -160,7 +160,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button6"
+            android:id="@+id/btnlocation"
             android:background="#ffffff"
             android:height="95dp"
             android:textColor="#ffffff"
@@ -188,7 +188,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button7"
+            android:id="@+id/btnweb"
             android:background="#ffffff"
             android:height="95dp"
             android:textColor="#ffffff"
@@ -206,7 +206,7 @@
             android:id="@+id/imageView2"
             android:background="@drawable/phones"
             android:backgroundTint="#ffffff"
-            android:layout_alignTop="@+id/button4"
+            android:layout_alignTop="@+id/btncall"
             android:layout_alignLeft="@+id/imageView"
             android:layout_alignStart="@+id/imageView" />
 
@@ -227,10 +227,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="98460-83434"
-            android:id="@+id/textView12"
+            android:id="@+id/txt1"
             android:textColor="#ffffff"
-            android:layout_alignBaseline="@+id/button4"
-            android:layout_alignBottom="@+id/button4"
+            android:layout_alignBaseline="@+id/btncall"
+            android:layout_alignBottom="@+id/btncall"
             android:layout_alignLeft="@+id/textView10"
             android:layout_alignStart="@+id/textView10" />
 
@@ -265,8 +265,8 @@
             android:id="@+id/textView14"
             android:textColor="#ffffff"
             android:layout_above="@+id/textView13"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12" />
+            android:layout_alignLeft="@+id/txt1"
+            android:layout_alignStart="@+id/txt1" />
 
         <ImageView
             android:layout_width="60dp"
@@ -334,18 +334,6 @@
             android:layout_alignLeft="@+id/textView13"
             android:layout_alignStart="@+id/textView13"
             android:background="@drawable/web" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="http://www.cntravels.com.np"
-            android:id="@+id/textView19"
-            android:textColor="#ffffff"
-            android:layout_alignBaseline="@+id/button7"
-            android:layout_alignBottom="@+id/button7"
-            android:layout_alignLeft="@+id/textView17"
-            android:layout_alignStart="@+id/textView17" />
 
     </RelativeLayout>
 </FrameLayout>

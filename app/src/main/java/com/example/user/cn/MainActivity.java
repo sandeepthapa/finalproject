@@ -120,10 +120,19 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_send) {
+            fragment = new Vehicleticketing();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
 
         }else if (id == R.id.trek) {
+            fragment = new Spinner1();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
 
         }else if (id == R.id.Tour) {
+
 
         }else if (id == R.id.Hike) {
 
