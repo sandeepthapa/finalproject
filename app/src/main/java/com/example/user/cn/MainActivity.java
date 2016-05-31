@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Fragment fragment = new TabFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame, fragment);
+        ft.commit();
     }
 
     @Override
@@ -86,59 +91,53 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             fragment = new TabFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
             fragment = new Loginvia();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
 
 
         } else if (id == R.id.nav_slideshow) {
             fragment = new Contact();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
-
-
-
-
 
 
         } else if (id == R.id.nav_manage) {
             fragment = new Aboutus();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
-
-
 
 
         } else if (id == R.id.nav_share) {
             fragment = new Flightticket();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
 
 
         } else if (id == R.id.nav_send) {
             fragment = new Vehicleticketing();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
 
-        }else if (id == R.id.trek) {
+        } else if (id == R.id.trek) {
             fragment = new Spinner1();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame , fragment);
+            ft.replace(R.id.frame, fragment);
             ft.commit();
 
-        }else if (id == R.id.Tour) {
+        } else if (id == R.id.Tour) {
 
 
-        }else if (id == R.id.Hike) {
+        } else if (id == R.id.Hike) {
 
         }
 
