@@ -19,10 +19,10 @@
     <string name="som_thapa">Som Thapa</string>
     <string name="_28_213144">28.213144</string>
     <string name="about_us">About us</string>
-    <string-array name="City">
-        <item>Kathmandu</item>
-        <item>Pokhara</item>
-        <item>Baglung</item>
+    <string-array name="Flight">
+        <item>National</item>
+        <item>International</item>
+        <item>Chartered</item>
     </string-array>
     <string-array name="Trek">
         <item>Mardi Himal</item>
@@ -40,4 +40,5 @@
         <item>other</item>
 
     </string-array>
+
 </resources>

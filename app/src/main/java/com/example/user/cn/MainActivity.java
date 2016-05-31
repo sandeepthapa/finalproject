@@ -84,6 +84,10 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment;
 
         if (id == R.id.nav_camera) {
+            fragment = new TabFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame , fragment);
+            ft.commit();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
             fragment = new Loginvia();
@@ -113,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_share) {
-            fragment = new BlankFragment();
+            fragment = new Flightticket();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.frame , fragment);
             ft.commit();

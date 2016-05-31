@@ -17,38 +17,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Facebook"
+            android:textColor="#ffffff"
             android:id="@+id/btnfb"
+            android:backgroundTint="@android:color/transparent"
             android:layout_above="@+id/btngmail"
+            android:layout_marginBottom="18dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="68dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@android:color/transparent"/>
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gmail"
+            android:textColor="#ffffff"
             android:id="@+id/btngmail"
+            android:backgroundTint="@android:color/transparent"
             android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/btnfb"
-            android:layout_alignStart="@+id/btnfb"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="@android:color/transparent"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Twitter"
             android:id="@+id/btntwitter"
+            android:textColor="#ffffff"
+            android:backgroundTint="@android:color/transparent"
             android:layout_below="@+id/btngmail"
             android:layout_alignLeft="@+id/btngmail"
             android:layout_alignStart="@+id/btngmail"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="26dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@android:color/transparent"/>
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </FrameLayout>
