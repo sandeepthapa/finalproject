@@ -61,10 +61,24 @@ public class TabFragment extends Fragment {
         @Override
         public Fragment getItem(int position)
         {
+            Fragment primaryFrag = new PrimaryFragment();
             switch (position){
-                case 0 : return new PrimaryFragment();
-                case 1 : return new SocialFragment();
-                case 2 : return new UpdatesFragment();
+                case 0 :
+                    Bundle basket = new Bundle();
+                    basket.putInt("image",R.drawable.facebook);
+                    primaryFrag.setArguments(basket);
+                    return primaryFrag;
+
+                case 1 :
+                    Bundle basket1 = new Bundle();
+                    basket1.putInt("image",R.drawable.google);
+                    primaryFrag.setArguments(basket1);
+                    return primaryFrag;
+                case 2 :
+                    Bundle basket2 = new Bundle();
+                    basket2.putInt("image",R.drawable.esewa);
+                    primaryFrag.setArguments(basket2);
+                    return primaryFrag;
             }
             return null;
         }
