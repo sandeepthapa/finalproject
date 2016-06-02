@@ -100,4 +100,6 @@ public class Loginvia extends Fragment  implements View.OnClickListener{
         }
 
     }
+
+
 }
