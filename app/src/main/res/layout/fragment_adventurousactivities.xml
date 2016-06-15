@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.cn.Adventurousactivities">
+    tools:context="com.example.user.cn.Tour">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="book_your_appointment"
             android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -41,10 +40,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="All fields are required"
             android:id="@+id/textView2"
-            android:layout_below="@+id/textView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,12 +50,12 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Appointment Date"
             android:id="@+id/textView3"
-            android:layout_below="@+id/textView2"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/name"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="50dp"
-            android:textSize="20dp"
-            android:textColor="#ffffff" />
+            android:layout_marginBottom="15dp" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -65,14 +63,14 @@
             android:inputType="date"
             android:ems="10"
             android:id="@+id/txtappdate"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_toEndOf="@+id/textView3"
-            android:layout_marginTop="20dp"
             android:textSize="25dp"
-            android:layout_toRightOf="@+id/textView3"
-            android:layout_marginLeft="3dp"
             android:background="@android:drawable/editbox_background"
-            android:allowUndo="true" />
+            android:allowUndo="true"
+            android:layout_above="@+id/name"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_toEndOf="@+id/textView3" />
 
         <ImageButton
             android:layout_width="25dp"
@@ -93,23 +91,25 @@
             android:id="@+id/textView5"
             android:textSize="20dp"
             android:textColor="#ffffff"
-            android:layout_below="@+id/textView3"
+            android:layout_above="@+id/email"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp" />
+            android:layout_marginBottom="15dp" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText3"
-            android:layout_alignBottom="@+id/textView5"
-            android:layout_alignLeft="@+id/txtappdate"
-            android:layout_alignStart="@+id/txtappdate"
-            android:layout_alignRight="@+id/editText6"
-            android:layout_alignEnd="@+id/editText6"
+            android:id="@+id/name"
             android:background="@android:drawable/editbox_background"
             android:textSize="25dp"
-            android:layout_marginTop="20dp" />
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_alignBaseline="@+id/textView5"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_alignLeft="@+id/email"
+            android:layout_alignStart="@+id/email"
+            android:layout_alignRight="@+id/txtappdate"
+            android:layout_alignEnd="@+id/txtappdate" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,24 +118,25 @@
             android:text="Email"
             android:id="@+id/textView6"
             android:textSize="20dp"
-            android:layout_below="@+id/textView5"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/email"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:textColor="#ffffff" />
+            android:layout_alignParentStart="true" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText6"
-            android:layout_above="@+id/textView7"
+            android:id="@+id/email"
             android:textSize="25dp"
             android:background="@android:drawable/editbox_background"
+            android:layout_above="@+id/num"
+            android:layout_alignRight="@+id/imgbtncal"
+            android:layout_alignEnd="@+id/imgbtncal"
+            android:layout_marginBottom="20dp"
             android:layout_alignLeft="@+id/txtappdate"
-            android:layout_alignStart="@+id/txtappdate"
-            android:layout_marginTop="20dp" />
+            android:layout_alignStart="@+id/txtappdate" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -144,23 +145,23 @@
             android:text="Phone"
             android:id="@+id/textView7"
             android:textSize="20dp"
-            android:layout_below="@+id/textView6"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/textView8"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:textColor="#ffffff" />
+            android:layout_marginBottom="19dp" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText7"
-            android:layout_above="@+id/textView8"
+            android:id="@+id/num"
             android:textSize="25dp"
             android:background="@android:drawable/editbox_background"
-            android:layout_alignLeft="@+id/editText6"
-            android:layout_alignStart="@+id/editText6" />
+            android:layout_alignTop="@+id/textView7"
+            android:layout_alignLeft="@+id/name"
+            android:layout_alignStart="@+id/name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -169,50 +170,49 @@
             android:text="Your Message"
             android:id="@+id/textView8"
             android:textSize="20dp"
-            android:layout_below="@+id/textView7"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/msg"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:textColor="#ffffff" />
+            android:layout_marginBottom="19dp" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText8"
+            android:id="@+id/msg"
             android:height="80dp"
             android:background="@android:drawable/editbox_background"
+            android:layout_above="@+id/Conf"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/editText7"
-            android:layout_alignStart="@+id/editText7"
-            android:layout_below="@+id/editText7"
-            android:layout_marginTop="2dp" />
+            android:layout_marginBottom="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm"
-            android:id="@+id/button2"
-            android:layout_below="@+id/editText8"
-            android:layout_toRightOf="@+id/textView8"
-            android:layout_toEndOf="@+id/textView8"
-            android:layout_centerInParent="true"
+            android:id="@+id/Conf"
             android:textColor="#ffffff"
-            android:layout_marginTop="20dp"
-            android:background="#06a034" />
+            android:background="#06a034"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/textView8"
+            android:layout_toEndOf="@+id/textView8" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="AdventuroursActivity"
+            android:text="AdventurousActivity"
             android:id="@+id/textView24"
             android:textColor="#ffffff"
-            android:layout_above="@+id/imgbtncal"
+            android:layout_above="@+id/textView3"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp" />
 
         <Spinner
             android:layout_width="wrap_content"
@@ -228,6 +228,5 @@
             android:layout_alignBottom="@+id/textView24" />
 
     </RelativeLayout>
-
 
 </FrameLayout>

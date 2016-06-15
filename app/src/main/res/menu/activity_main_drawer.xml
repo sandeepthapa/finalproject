@@ -40,7 +40,8 @@
                 android:title="Tour" />
             <item
                 android:id="@+id/Hike"
-                android:title="Hiking" />
+                android:title="Adventurous Acitivities
+                " />
         </menu>
     </item>
 </menu>

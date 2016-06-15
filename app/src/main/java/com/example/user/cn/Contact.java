@@ -65,7 +65,7 @@ public class Contact extends Fragment implements View.OnClickListener {
         }
         switch (v.getId()) {
             case R.id.btnweb:
-                Uri uri = Uri.parse("http://twitter.com/");
+                Uri uri = Uri.parse("http://www.cntravels.com.np/");
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);

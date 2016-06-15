@@ -2,7 +2,6 @@ package com.example.user.cn;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,9 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,10 +21,8 @@ import java.util.Calendar;
 import java.util.Locale;
 
 
-public class Flightticket extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener  {
-   Button c;
-    EditText msg;
 
+public class Tour extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener {
     private String mParam1;
     private String mParam2;
     private TextView txtdate;
@@ -37,8 +32,6 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
     private DatePickerDialog mDatePickerDialog;
     private ImageButton dates;
     private SimpleDateFormat dateFormatter;
-
-
 
 
     @Override
@@ -56,19 +49,16 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
 
 //        return inflater.inflate(R.layout.fragment_blank, container, false);
         View view = null;
-        view = inflater.inflate(R.layout.fragment_flightticket, container, false);
-        c = (Button) view.findViewById(R.id.Conf);
+        view = inflater.inflate(R.layout.fragment_tour, container, false);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
-
         dates.setOnClickListener(this);
-        c.setOnClickListener(this);
 
         txtdate = (TextView) view.findViewById(R.id.txtappdate);
         txtdate.setInputType(InputType.TYPE_NULL);
-        String[] Flight =
-                {"National", "International", "Chartered"};
+        String[] Tour =
+                {"Inbound", "Outbound"};
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, Flight);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, Tour);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_item);
         spinner.setAdapter(adapter);
         return view;
@@ -76,19 +66,6 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
 
     public void onClick(View view) {
         mDatePickerDialog.show();
-        msg =(EditText)view.findViewById(R.id.msg);
-        String message = msg.getText().toString();
-        sendEmail(message);
-    }
-
-    protected void sendEmail(String messsage){
-
-        String[] to = new String[]{"stc2065@gmail.com"};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.putExtra(Intent.EXTRA_EMAIL,to);
-        emailIntent.putExtra(Intent.EXTRA_TEXT,messsage);
-       emailIntent.setType("message/rfc822");
-        startActivity(Intent.createChooser(emailIntent , "Email"));
     }
 
     private void setDateTimeField() {

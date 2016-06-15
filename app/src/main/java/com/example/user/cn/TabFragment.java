@@ -6,15 +6,18 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class TabFragment extends Fragment {
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
     public static int int_items = 3 ;
+    Button c,d,e,f,g;
 
     @Nullable
     @Override
@@ -25,6 +28,67 @@ public class TabFragment extends Fragment {
         View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+        c = (Button)x.findViewById(R.id.btn1);
+        c.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Flightticket();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, fragment);
+                ft.commit();
+                c.setVisibility(View.GONE);
+            }
+        });
+        d = (Button)x.findViewById(R.id.btn2);
+        d.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Vehicleticketing();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, fragment);
+                ft.commit();
+                c.setVisibility(View.GONE);
+            }
+        });
+        e = (Button)x.findViewById(R.id.btn3);
+        e.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Spinner1();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, fragment);
+                ft.commit();
+                c.setVisibility(View.GONE);
+            }
+        });
+        f = (Button)x.findViewById(R.id.btn4);
+        f.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Tour();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, fragment);
+                ft.commit();
+                c.setVisibility(View.GONE);
+            }
+        });
+        g = (Button)x.findViewById(R.id.btn5);
+        g.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Adventurousactivities();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, fragment);
+                ft.commit();
+                c.setVisibility(View.GONE);
+            }
+        });
+
 
         /**
          *Set an Apater for the View Pager
@@ -65,19 +129,34 @@ public class TabFragment extends Fragment {
             switch (position){
                 case 0 :
                     Bundle basket = new Bundle();
-                    basket.putInt("image",R.drawable.facebook);
+                    basket.putInt("image",R.drawable.lake);
                     primaryFrag.setArguments(basket);
                     return primaryFrag;
 
                 case 1 :
                     Bundle basket1 = new Bundle();
-                    basket1.putInt("image",R.drawable.google);
+                    basket1.putInt("image",R.drawable.lake3);
                     primaryFrag.setArguments(basket1);
                     return primaryFrag;
                 case 2 :
                     Bundle basket2 = new Bundle();
-                    basket2.putInt("image",R.drawable.esewa);
+                    basket2.putInt("image",R.drawable.pkr);
                     primaryFrag.setArguments(basket2);
+                    return primaryFrag;
+                case 3 :
+                    Bundle basket3 = new Bundle();
+                    basket3.putInt("image",R.drawable.pkr);
+                    primaryFrag.setArguments(basket3);
+                    return primaryFrag;
+                case 4 :
+                    Bundle basket4 = new Bundle();
+                    basket4.putInt("image",R.drawable.pkr);
+                    primaryFrag.setArguments(basket4);
+                    return primaryFrag;
+                case 5 :
+                    Bundle basket5= new Bundle();
+                    basket5.putInt("image",R.drawable.pkr);
+                    primaryFrag.setArguments(basket5);
                     return primaryFrag;
             }
             return null;
@@ -99,11 +178,17 @@ public class TabFragment extends Fragment {
 
             switch (position){
                 case 0 :
-                    return "Primary";
+                    return "lake";
                 case 1 :
-                    return "Social";
+                    return "Mountain";
                 case 2 :
-                    return "Updates";
+                    return "boat";
+                case 3 :
+                    return "Mardi HImal";
+                case 4:
+                    return "Lwang ghalel";
+                case 5 :
+                    return "Ghandruk";
             }
             return null;
         }
