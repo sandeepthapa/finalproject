@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +26,8 @@ import java.util.Calendar;
 import java.util.Locale;
 
 
-public class Flightticket extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener  {
-   Button c;
+public class Flightticket extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener {
+    Button c;
     EditText msg;
 
     private String mParam1;
@@ -37,8 +39,6 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
     private DatePickerDialog mDatePickerDialog;
     private ImageButton dates;
     private SimpleDateFormat dateFormatter;
-
-
 
 
     @Override
@@ -59,7 +59,7 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
         view = inflater.inflate(R.layout.fragment_flightticket, container, false);
         c = (Button) view.findViewById(R.id.Conf);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
-
+        msg = (EditText) view.findViewById(R.id.msg);
         dates.setOnClickListener(this);
         c.setOnClickListener(this);
 
@@ -74,21 +74,40 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
         return view;
     }
 
+    @Override
     public void onClick(View view) {
-        mDatePickerDialog.show();
-        msg =(EditText)view.findViewById(R.id.msg);
-        String message = msg.getText().toString();
-        sendEmail(message);
+//        mDatePickerDialog.show();
+//
+//        String message = msg.getText().toString();
+        sendEmail("hello dholu");
     }
 
-    protected void sendEmail(String messsage){
+    public void sendEmail(String messsage) {
 
-        String[] to = new String[]{"stc2065@gmail.com"};
+        /*String[] to = new String[]{"stc2065@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.putExtra(Intent.EXTRA_EMAIL,to);
-        emailIntent.putExtra(Intent.EXTRA_TEXT,messsage);
-       emailIntent.setType("message/rfc822");
-        startActivity(Intent.createChooser(emailIntent , "Email"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, messsage);
+        emailIntent.setType("message/rfc822");
+        startActivity(Intent.createChooser(emailIntent, "Email"));*/
+
+
+        try {
+
+
+
+            GMailSender sender = new GMailSender("stc2065@gmail.com", "lordsaveus2");
+            sender.sendMail("This is Subject",
+                    "This is Body",
+                    "stc2065@gmail.com",
+                    "theanilpaudel@gmail.com");
+        } catch (Exception e) {
+            Log.e("SendMail", e.getMessage(), e);
+        }
+
+
+
+
     }
 
     private void setDateTimeField() {
