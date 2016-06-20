@@ -6,12 +6,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -23,6 +26,11 @@ import java.util.Locale;
 
 
 public class Spinner1 extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener {
+    private static final String TAG = "Trekking";
+    Button c;
+    EditText msg , emailet, phone ,name;
+    Spinner spinner;
+
     private String mParam1;
     private String mParam2;
     private TextView txtdate;
@@ -50,6 +58,12 @@ public class Spinner1 extends Fragment implements ImageButton.OnClickListener, A
 //        return inflater.inflate(R.layout.fragment_blank, container, false);
         View view = null;
         view = inflater.inflate(R.layout.fragment_spinner1, container, false);
+        c = (Button) view.findViewById(R.id.Conf);
+        dates = (ImageButton) view.findViewById(R.id.imgbtncal);
+        msg = (EditText) view.findViewById(R.id.nme);
+        emailet = (EditText) view.findViewById(R.id.email);
+        phone = (EditText) view.findViewById(R.id.num);
+        name = (EditText) view.findViewById(R.id.nme);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
         dates.setOnClickListener(this);
 
@@ -57,7 +71,7 @@ public class Spinner1 extends Fragment implements ImageButton.OnClickListener, A
         txtdate.setInputType(InputType.TYPE_NULL);
         String[] Trek =
                 {"Ghandruk", "MardiHimal", "Lwangghalel","ABC","Dhampus","Other places"};
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+         spinner = (Spinner) view.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, Trek);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_item);
         spinner.setAdapter(adapter);
@@ -65,8 +79,51 @@ public class Spinner1 extends Fragment implements ImageButton.OnClickListener, A
     }
 
     public void onClick(View view) {
+
         mDatePickerDialog.show();
+        String message = msg.getText().toString();
+        String email = emailet.getText().toString();
+        String ph = phone.getText().toString();
+        String nm = name.getText().toString();
+
+        String valueFromSpinner = spinner.getSelectedItem().toString();
+        int day = dd;
+        int month = mm;
+        int year = yy;
+        Log.d(TAG, "onClick: "+message+">>"+valueFromSpinner+">>"+day+">>"+">>"+month+">>"+year);
+        sendEmail(message,valueFromSpinner,day,month,year,email,ph,nm);
     }
+    public void sendEmail(String extraMsg, String mValueFromSpinner, int day, int month, int year , String emailet, String ph, String nm) {
+
+        /*String[] to = new String[]{"stc2065@gmail.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, messsage);
+        emailIntent.setType("message/rfc822");
+        startActivity(Intent.createChooser(emailIntent, "Email"));*/
+
+
+        try {
+
+
+            Log.d(TAG, "sendEmail: " + "Ticket Booked for " + mValueFromSpinner + " Trekking" +
+                    "Your ticket is booked for " + year + "/" + month + "/" + day + "/n" + extraMsg);
+            GMailSender sender = new GMailSender("aegeus11@gmail.com", "lordsaveus2");
+            sender.sendMail("Ticket Booked for " + mValueFromSpinner + " Trek",
+                    "Your ticket is booked for " + year + "/" + month + "/" + day + "\n"
+                            + "Name =" + nm
+                            + "Email =" + emailet
+                            +"Phone no:"+ph
+                            + "Message :"+extraMsg,
+                    "aegeus11@gmail.com",
+                    "stc2065@gmail.com");
+        } catch (Exception e) {
+            Log.e("SendMail", e.getMessage(), e);
+        }
+    }
+
+
+
 
     private void setDateTimeField() {
 //        dates.setOnClickListener(this);

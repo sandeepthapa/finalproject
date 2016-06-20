@@ -1,11 +1,7 @@
 package com.example.user.cn;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
 import android.util.Log;
@@ -27,25 +23,26 @@ import java.util.Locale;
 
 
 public class Flightticket extends Fragment implements ImageButton.OnClickListener, AdapterView.OnItemSelectedListener {
+    private static final String TAG = "Flightticket";
     Button c;
-    EditText msg;
+    EditText msg , emailet, phone , from, to,name;
 
     private String mParam1;
-    private String mParam2;
+    private String mParam2,mValueFromSpinner;
     private TextView txtdate;
     private int dd;
     private int mm;
     private int yy;
-    private DatePickerDialog mDatePickerDialog;
+    DatePickerDialog mDatePickerDialog;
     private ImageButton dates;
     private SimpleDateFormat dateFormatter;
-
+    Spinner spinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
-        setDateTimeField();
+//        setDateTimeField();
     }
 
     @Override
@@ -59,15 +56,28 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
         view = inflater.inflate(R.layout.fragment_flightticket, container, false);
         c = (Button) view.findViewById(R.id.Conf);
         dates = (ImageButton) view.findViewById(R.id.imgbtncal);
-        msg = (EditText) view.findViewById(R.id.msg);
-        dates.setOnClickListener(this);
+        msg = (EditText) view.findViewById(R.id.nme);
+        emailet = (EditText) view.findViewById(R.id.email);
+        phone = (EditText) view.findViewById(R.id.num);
+        from = (EditText) view.findViewById(R.id.from);
+        to = (EditText) view.findViewById(R.id.dest);
+        name = (EditText) view.findViewById(R.id.nme);
+
+
+        dates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatePickerDialog = new DatePickerDialog(getActivity(), mDateSetListener, 2016, 05, 16);
+                mDatePickerDialog.show();
+            }
+        });
         c.setOnClickListener(this);
 
         txtdate = (TextView) view.findViewById(R.id.txtappdate);
         txtdate.setInputType(InputType.TYPE_NULL);
         String[] Flight =
                 {"National", "International", "Chartered"};
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+        spinner = (Spinner) view.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, Flight);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_item);
         spinner.setAdapter(adapter);
@@ -78,11 +88,22 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
     public void onClick(View view) {
 //        mDatePickerDialog.show();
 //
-//        String message = msg.getText().toString();
-        sendEmail("hello dholu");
+        String message = msg.getText().toString();
+        String email = emailet.getText().toString();
+        String ph = phone.getText().toString();
+        String fd = from.getText().toString();
+        String td = to.getText().toString();
+        String nm = name.getText().toString();
+
+        String valueFromSpinner = spinner.getSelectedItem().toString();
+        int day = dd;
+        int month = mm;
+        int year = yy;
+        Log.d(TAG, "onClick: "+message+">>"+valueFromSpinner+">>"+day+">>"+">>"+month+">>"+year);
+        sendEmail(message,valueFromSpinner,day,month,year,email,ph,fd,td,nm);
     }
 
-    public void sendEmail(String messsage) {
+    public void sendEmail(String extraMsg, String mValueFromSpinner, int day, int month, int year , String emailet, String ph, String fd , String td,String nm) {
 
         /*String[] to = new String[]{"stc2065@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -95,11 +116,18 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
         try {
 
 
-
-            GMailSender sender = new GMailSender("stc2065@gmail.com", "lordsaveus2");
-            sender.sendMail("This is Subject",
-                    "This is Body",
-                    "stc2065@gmail.com",
+            Log.d(TAG, "sendEmail: "+"Ticket Booked for "+mValueFromSpinner+" flight"+
+                    "Your ticket is booked for "+year+"/"+month+"/"+day+"/n"+extraMsg);
+            GMailSender sender = new GMailSender("aegeus11@gmail.com", "lordsaveus2");
+            sender.sendMail("Ticket Booked for "+mValueFromSpinner+" flight",
+                    "Your ticket is booked for "+year+"/"+month+"/"+day+"\n"
+                            +"Name ="+nm
+                            +"Email ="+emailet
+                            +"Phone no:"+ph
+                            +"from destination:"+fd
+                            +"To Destination"+td
+                             +"Messaage :" +extraMsg,
+                    "aegeus11@gmail.com",
                     "theanilpaudel@gmail.com");
         } catch (Exception e) {
             Log.e("SendMail", e.getMessage(), e);
@@ -123,6 +151,9 @@ public class Flightticket extends Fragment implements ImageButton.OnClickListene
             yy = selectedYear;
             mm = selectedMonth;
             dd = selectedDay;
+
+            Log.d(TAG, "onDateSet: year"+yy);
+
             //age.setDateOfBirth(startYear, startMonth, startDay);
             txtdate.setText("" + dd + "-" + (mm + 1) + "-" + yy);
             //calculateAge();

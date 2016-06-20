@@ -19,18 +19,6 @@
 
         android:layout_gravity="left|center_vertical"
         android:background="#2345a1">
-        <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/scrollView"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +52,7 @@
             android:id="@+id/textView3"
             android:textSize="20dp"
             android:textColor="#ffffff"
-            android:layout_above="@+id/name"
+            android:layout_above="@+id/nme"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="15dp" />
@@ -78,7 +66,7 @@
             android:textSize="25dp"
             android:background="@android:drawable/editbox_background"
             android:allowUndo="true"
-            android:layout_above="@+id/name"
+            android:layout_above="@+id/nme"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textView3"
@@ -111,7 +99,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/name"
+            android:id="@+id/nme"
             android:background="@android:drawable/editbox_background"
             android:textSize="25dp"
             android:inputType="textPersonName"
@@ -172,8 +160,8 @@
             android:textSize="25dp"
             android:background="@android:drawable/editbox_background"
             android:layout_alignTop="@+id/textView7"
-            android:layout_alignLeft="@+id/name"
-            android:layout_alignStart="@+id/name" />
+            android:layout_alignLeft="@+id/nme"
+            android:layout_alignStart="@+id/nme" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -184,9 +172,7 @@
             android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_above="@+id/msg"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="19dp" />
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -211,8 +197,8 @@
             android:textColor="#ffffff"
             android:background="#06a034"
             android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/textView8"
-            android:layout_toEndOf="@+id/textView8" />
+            android:layout_alignRight="@+id/textView8"
+            android:layout_alignEnd="@+id/textView8" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -238,8 +224,7 @@
             android:layout_alignLeft="@+id/txtappdate"
             android:layout_alignStart="@+id/txtappdate"
             android:layout_alignBottom="@+id/textView24" />
-        </LinearLayout>
-        </ScrollView>
+
 
     </RelativeLayout>
 

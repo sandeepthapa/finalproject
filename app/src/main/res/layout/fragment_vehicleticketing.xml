@@ -98,7 +98,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/name"
+            android:id="@+id/nme"
             android:background="@android:drawable/editbox_background"
             android:textSize="20dp"
             android:inputType="textPersonName"
@@ -275,8 +275,9 @@
             android:background="#06a034"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_below="@+id/msg"
-            android:layout_toRightOf="@+id/textView24"
-            android:layout_toEndOf="@+id/textView24" />
+            android:layout_toRightOf="@+id/textView19"
+            android:layout_toEndOf="@+id/textView19"
+            android:layout_marginTop="14dp" />
 
     </RelativeLayout>
 
